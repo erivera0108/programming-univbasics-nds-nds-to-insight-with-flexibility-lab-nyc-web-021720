@@ -6,6 +6,12 @@ require 'pp'
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
 
+def studios_totals(nds)
+  a_o_a_movies_with_director_names = movies_with_directors_set(nds)
+  movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
+  return gross_per_studio(movies_with_director_names)
+end
+
 def flatten_a_o_a(aoa)
   result = []
   i = 0
@@ -123,8 +129,4 @@ end
 # Don't edit the following code! Make the methods above work with this method
 # call code. You'll have to "see-saw" to get this to work!
 
-def studios_totals(nds)
-  a_o_a_movies_with_director_names = movies_with_directors_set(nds)
-  movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
-  return gross_per_studio(movies_with_director_names)
-end
+

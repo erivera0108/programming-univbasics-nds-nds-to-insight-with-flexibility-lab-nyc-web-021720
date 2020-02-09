@@ -60,6 +60,7 @@ def movies_with_director_key(name, movies_collection)
     result << movie_with_director_name(name, movie_info )
     index += 1 
   end 
+  puts result
   result
 end
 
@@ -86,6 +87,7 @@ def movies_with_directors_set(source)
     result << movies_with_director_key(directors_name, directors_movies_info)
     index += 1 
   end 
+  puts result
   result
 end
 
@@ -114,7 +116,6 @@ def gross_per_studio(collection)
     end 
   index += 1 
   end
-  puts result
 result
 end 
 
@@ -123,11 +124,10 @@ end
 # ----------------    End of Your Code Region --------------------
 # Don't edit the following code! Make the methods above work with this method
 # call code. You'll have to "see-saw" to get this to work!
-=begin
+
 
 def studios_totals(nds)
   a_o_a_movies_with_director_names = movies_with_directors_set(nds)
   movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
   return gross_per_studio(movies_with_director_names)
 end
-=end

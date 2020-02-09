@@ -9,7 +9,6 @@ require 'pp'
 def flatten_a_o_a(aoa)
   result = []
   i = 0
-
   while i < aoa.length do
     k = 0
     while k < aoa[i].length do
@@ -60,7 +59,6 @@ def movies_with_director_key(name, movies_collection)
     result << movie_with_director_name(name, movie_info )
     index += 1 
   end 
-  puts result
   result
 end
 
@@ -87,7 +85,6 @@ def movies_with_directors_set(source)
     result << movies_with_director_key(directors_name, directors_movies_info)
     index += 1 
   end 
-  puts result
   result
 end
 

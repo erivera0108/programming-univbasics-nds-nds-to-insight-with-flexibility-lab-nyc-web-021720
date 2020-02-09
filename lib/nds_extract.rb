@@ -62,33 +62,6 @@ def movies_with_director_key(name, movies_collection)
   result
 end
 
-  # GOAL: For each director, find their :movies Array and stick it in a new Array
-  #
-  # INPUT:
-  # * source: An Array of Hashes containing director information including
-  # :name and :movies
-  # source = [{:name => value, :movies => value},{:name => value, :movies => value}]
-  #
-  # RETURN:
-  #
-  # Array of Arrays containing all of a director's movies. Each movie will need
-  # to have a :director_name key added to it.
-
-
-def movies_with_directors_set(source)
-  result = [ ]
-  index = 0 
-  while index < source.length do 
-    header = source[index]
-    directors_name = header[:name]
-    directors_movies_info = header[:movies]
-    result << movies_with_director_key(directors_name, directors_movies_info)
-    index += 1 
-  end 
-  result
-end
-
-
   # GOAL: Given an Array of Hashes where each Hash represents a movie,
   # return a Hash that includes the total worldwide_gross of all the movies from
   # each studio.
@@ -115,6 +88,33 @@ def gross_per_studio(collection)
   end
 result
 end 
+
+
+  # GOAL: For each director, find their :movies Array and stick it in a new Array
+  #
+  # INPUT:
+  # * source: An Array of Hashes containing director information including
+  # :name and :movies
+  # source = [{:name => value, :movies => value},{:name => value, :movies => value}]
+  #
+  # RETURN:
+  #
+  # Array of Arrays containing all of a director's movies. Each movie will need
+  # to have a :director_name key added to it.
+
+
+def movies_with_directors_set(source)
+  result = [ ]
+  index = 0 
+  while index < source.length do 
+    header = source[index]
+    directors_name = header[:name]
+    directors_movies_info = header[:movies]
+    result << movies_with_director_key(directors_name, directors_movies_info)
+    index += 1 
+  end 
+  result
+end
 
 
 
